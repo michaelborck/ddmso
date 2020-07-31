@@ -10,6 +10,7 @@ import collections
 import pandas as pd
 import seaborn as sns
 import glob
+from os.path import basename
 
 # Calculate the mAP for a model on a given dataset
 def evaluate_model(dataset, model, cfg):
@@ -199,9 +200,10 @@ def flop_boxes(PATH):
 
         
 # load annotations to a dataframe so can perform some analysis 
-def toDataFrame(PATH):
+def to_data_frame(PATH, ANNOTS):
     objects = []
-    for f in glob.glob(PATH + '*.xml'):
+    for image in glob.glob(PATH + '*.jpg'):
+        f = ANNOTS + basename(image)[:3] + '.xml'
         tree = ET.parse(f)
         root = tree.getroot()
         for member in root.findall('object'): 

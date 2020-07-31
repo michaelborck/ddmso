@@ -17,7 +17,7 @@ This project uses CNNs to detect distant maritime surface objects when observed 
     │
     ├── weights            <- This is where the model weights are stored (last layer)
     │
-    ├── docs               <- Documentation specific to usin this project
+    ├── docs               <- Documentation specific to using this project
     │
     ├── src                <- Python source codes, Jupyter notebooks. 
     │   ├── train.py       <- build a model based on parameters in config.py
